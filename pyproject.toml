@@ -18,7 +18,7 @@ packages = [
 ]
 
 [tool.poetry.urls]
-"Bug Tracker" = "https://github.com/jtiai/pygame-colliders/issues"
+"Bug Tracker" = "https://github.com/jtiai/janzeng/issues"
 
 [tool.poetry.dependencies]
 python = "^3.7"

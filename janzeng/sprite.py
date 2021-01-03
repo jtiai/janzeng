@@ -5,9 +5,15 @@ import pygame
 from janzeng.entity import Entity
 
 PIVOTS = [
-    "topleft", "topcenter", "topright",
-    "midleft", "center", "midright",
-    "bottomleft", "bottomcenter", "bottomright",
+    "topleft",
+    "topcenter",
+    "topright",
+    "midleft",
+    "center",
+    "midright",
+    "bottomleft",
+    "bottomcenter",
+    "bottomright",
 ]
 
 

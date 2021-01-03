@@ -1,11 +1,10 @@
-import pytest
 import pygame
 
 from janzeng.game import Game
 
 
 def test_engine_instantiation():
-    game = Game()
+    game = Game()  # NOQA
 
 
 def test_quit_event(mocker):
