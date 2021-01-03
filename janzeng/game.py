@@ -15,13 +15,16 @@ class Game:
         self.clock = pygame.time.Clock()
         self.background = pygame.Color("black")
         self.dt = 0.0
+        self.running = False
 
     def run(self):
-        while True:
+        self.running = True
+        while self.running:
             self.dt = self.clock.tick(self.fps) / 1000.0
             events = pygame.event.get()
             for event in events:
                 if event.type == pygame.QUIT:
+                    self.running = False
                     return
                 ev = PygameEvent(event.type)
                 func_name = f"on_{ev.name.lower()}"

@@ -36,6 +36,7 @@ isort = "^5.6.4"
 pylint = "^2.6.0"
 sphinxcontrib-fulltoc = "^1.2.0"
 rstcheck = "^3.3.1"
+pytest-mock = "^3.4.0"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]

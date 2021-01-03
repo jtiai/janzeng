@@ -377,6 +377,20 @@ toml = "*"
 testing = ["argcomplete", "hypothesis (>=3.56)", "mock", "nose", "requests", "xmlschema"]
 
 [[package]]
+name = "pytest-mock"
+version = "3.4.0"
+description = "Thin-wrapper around the mock package for easier use with pytest"
+category = "dev"
+optional = false
+python-versions = ">=3.5"
+
+[package.dependencies]
+pytest = ">=5.0"
+
+[package.extras]
+dev = ["pre-commit", "tox", "pytest-asyncio"]
+
+[[package]]
 name = "pytz"
 version = "2020.5"
 description = "World timezone definitions, modern and historical"
@@ -630,7 +644,7 @@ testing = ["pytest (>=3.5,<3.7.3 || >3.7.3)", "pytest-checkdocs (>=1.2.3)", "pyt
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.7"
-content-hash = "fc0a00e39fb0c830a64aad3f915b00c7d9bb986d52ef819734ed7e182cb4d41e"
+content-hash = "9fb299cab183afc682f886619e83ea10ece4b3e64114139b9d7191a7d39f8d22"
 
 [metadata.files]
 alabaster = [
@@ -862,6 +876,10 @@ pyparsing = [
 pytest = [
     {file = "pytest-6.2.1-py3-none-any.whl", hash = "sha256:1969f797a1a0dbd8ccf0fecc80262312729afea9c17f1d70ebf85c5e76c6f7c8"},
     {file = "pytest-6.2.1.tar.gz", hash = "sha256:66e419b1899bc27346cb2c993e12c5e5e8daba9073c1fbce33b9807abc95c306"},
+]
+pytest-mock = [
+    {file = "pytest-mock-3.4.0.tar.gz", hash = "sha256:c3981f5edee6c4d1942250a60d9b39d38d5585398de1bfce057f925bdda720f4"},
+    {file = "pytest_mock-3.4.0-py3-none-any.whl", hash = "sha256:c0fc979afac4aaba545cbd01e9c20736eb3fefb0a066558764b07d3de8f04ed3"},
 ]
 pytz = [
     {file = "pytz-2020.5-py2.py3-none-any.whl", hash = "sha256:16962c5fb8db4a8f63a26646d8886e9d769b6c511543557bc84e9569fb9a9cb4"},
