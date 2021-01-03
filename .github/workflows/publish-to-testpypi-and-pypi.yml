@@ -1,0 +1,39 @@
+name: Build and publish packages
+
+on:
+  repository_dispatch:
+    types: [trigger-workflow-2]
+
+jobs:
+  build-n-publish:
+    name: Build and publish to PyPI and TestPyPI
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@master
+        with:
+          ref: ${{ github.event.client_payload.sha }}
+
+      - name: Set up Python 3.7
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.7
+
+      - name: Install dependencies
+        run: |
+          python -m pip install poetry
+
+      - name: Build a binary wheel and a source tarball
+        run: |
+          poetry build
+
+      - name: Publish distribution to Test PyPI
+        uses: pypa/gh-action-pypi-publish@master
+        with:
+          password: ${{ secrets.test_pypi_password }}
+          repository_url: https://test.pypi.org/legacy/
+
+      - name: Publish distribution to PyPI
+        if: startsWith(github.ref, 'refs/tags')
+        uses: pypa/gh-action-pypi-publish@master
+        with:
+          password: ${{ secrets.pypi_password }}
