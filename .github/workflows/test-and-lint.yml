@@ -17,6 +17,9 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - name: Install dependencies
         run: |
+          sudo apt-get install xvfb
+          export DISPLAY=':99.0'
+          xvfb :99 -screen 0 1024x769x24 > /dev/null/ 2>&1 &
           python -m pip install --upgrade pip
           python -m pip install poetry
           poetry install
